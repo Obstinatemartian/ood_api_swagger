@@ -84,4 +84,3 @@ schemes:
       Status:
       type: "string"
       example: "success"
-
