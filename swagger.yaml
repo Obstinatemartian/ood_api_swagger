@@ -162,6 +162,12 @@ definitions:
         type: "integer"
         format: "int32"
 
+  AllAddresses:
+    type: array
+    items:
+      $ref: '#/definitions/addresses_per_user_success'
+
+
   addresses_per_user_success:
     type: "object"
     properties:
