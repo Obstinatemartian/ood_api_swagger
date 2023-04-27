@@ -146,13 +146,6 @@ definitions:
       addressID:
         type: "integer"
         format: "int32"
-      
-  AddressID:
-    type: "object"
-    properties:
-      addressID:
-        type: "integer"
-        format: "int32"
 
   login_success:
     type: "object"
