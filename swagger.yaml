@@ -85,7 +85,7 @@ paths:
         200:
           description: "successful retrieval"
           schema:
-            $ref: "#/definitions/addresses_per_user_success"
+            $ref: "#/definitions/AllAddresses"
   /get-addresses-by-id:
     post:
       tags:
@@ -107,7 +107,7 @@ paths:
         200:
           description: "successful retrieval"
           schema:
-            $ref: "#/definitions/addresses_per_user_success"
+            $ref: "#/definitions/AllAddresses"
 securityDefinitions:
   api_key:
     type: "apiKey"
