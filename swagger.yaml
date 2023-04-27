@@ -62,6 +62,52 @@ paths:
       responses:
         default:
           description: "successful operation"
+
+    /get-addresses-per-user:
+      post:
+        tags:
+          - "addresses"
+        summary: "Get Addresses"
+        description: "This API returns all the addresses for a particular UserID"
+        operationId: "createUser"
+        consumes:
+          - "application/json"
+        produces:
+          - "application/json"
+        parameters:
+          - in: "body"
+            name: "body"
+            description: "Created user object"
+            required: true
+            schema:
+              $ref: "#/definitions/UserID"
+        responses:
+          200:
+            description: "successful retrieval"
+            schema:
+              $ref: "#/definitions/addresses_per_user_success"
+    /get-addresses-by-id:
+      post:
+        tags:
+          - "addresses"
+        summary: "Get Addresses"
+        description: "This API returns all the details of a particular addresses from its ID"
+        consumes:
+          - "application/json"
+        produces:
+          - "application/json"
+        parameters:
+          - in: "body"
+            name: "body"
+            description: "Created user object"
+            required: true
+            schema:
+              $ref: "#/definitions/AddressID"
+        responses:
+          200:
+            description: "successful retrieval"
+            schema:
+              $ref: "#/definitions/addresses_per_user_success"
 securityDefinitions:
   api_key:
     type: "apiKey"
@@ -182,6 +228,27 @@ definitions:
       password:
         type: "string"
 
+  UserID:
+    type: "object"
+    properties:
+      userID:
+        type: "integer"
+        format: "int32"
+
+  AddressID: 
+    type: "object"
+    properties:
+      addressID:
+        type: "integer"
+        format: "int32"
+      
+  AddressID:
+    type: "object"
+    properties:
+      addressID:
+        type: "integer"
+        format: "int32"
+
   login_success:
     type: "object"
     properties:
@@ -196,6 +263,27 @@ definitions:
       UserID:
         type: "integer"
         format: "int32"
+
+  addresses_per_user_success:
+    type: "object"
+    properties:
+      AddressLine1:
+        type: "string"
+      AddressLine2:
+        type: "string"
+      City:
+        type: "string"
+      State:
+        type: "string"
+      ZipCode:
+        type: "string"
+      AddressID:
+        type: "integer"
+        format: "int32"
+
+  
+  
+  
 externalDocs:
   description: "Find out more about Swagger"
   url: "http://swagger.io"
